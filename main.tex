@@ -1,0 +1,62 @@
+% !TEX encoding = UTF-8 Unicode
+% !TEX program = xelatex
+% !TEX options = -synctex=1 -interaction=nonstopmode --shell-escape -file-line-error "%DOC%"
+% !BIB program = biber
+% !TEX TS-program = xelatex
+% !BIB TS-program = biber
+%%
+%%  本模板方式编译: XeLaTeX + biber
+%%
+%%  注意: 在改变编译方式前应先删除 *.toc 和 *.aux 文件
+%%
+\documentclass[AutoFakeBold,AutoFakeSlant,oneside]{report}
+
+% 引入NKThesis包
+\usepackage{NKThesis_bachelor}
+% 参考文献
+\addbibresource{nkthesis.bib}
+% 图片文件夹
+\graphicspath{{image/}}
+
+\includeonly{
+	./tex/abstract,
+	./tex/introduction,
+	./tex/relatedwork,
+	./tex/method,
+	./tex/discussion,
+	./tex/summary,
+	./tex/references,
+	./tex/acknowledgements,
+	./tex/appendices,
+}
+
+\begin{document}
+	\NKTSetup{
+		中文题目 = 我是爱南开的,
+		中文题目第二行 = 这是第二行题目（如不需要删去即不会显示）,
+		中文题目第三行 = 这是第三行题目（目前技术有限，没能实现无限扩展）,
+		英文题目 = I Love Nankai,
+		英文题目第二行 = This is secondline(同上),
+		英文题目第三行 = This is thirdline(同上),
+		学号 = 1234567,
+		姓名 = 张三,
+		年级 = 2017级,
+		专业 = 计算机科学与技术,
+		系别 = 计算机系,
+		学院 = 计算机学院,
+		指导教师 = ABC教授,
+		合作教师 = 罗翔老师(同上),
+		完成日期 = 2021年6月
+	}
+	\include{./tex/abstract}
+	\thesiscontent
+    \include{./tex/introduction}
+    \include{./tex/relatedwork}
+	\include{./tex/method}
+	\include{./tex/discussion}
+	\include{./tex/summary}
+
+	\include{./tex/appendices}
+    \include{./tex/references}
+	\include{./tex/acknowledgements}
+\end{document}
